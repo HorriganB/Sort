@@ -39,54 +39,43 @@ public class Sort {
             }
             System.out.print(counter + "\n");
             }
-            System.out.println("2 = SelectSort, 1 = InsertSort");
+            System.out.println("1 = InsertSort, 2 = SelectSort");
     }
     public static void sort(){
-            if(in.nextInt() = 1){      
-                for (int i = 1; i < ints.length; i++) {
-                    int next = ints[i];        
-                    int j = i;
-                    while (j > 0 && ints[j - 1] > next) {
-                         ints[j] = ints[j - 1];
-                         j--;
-                    }
-                list[j] = next;
+        int ans = in.nextInt();
+        if(ans == 1){
+            Integer next; 
+            for (int i = 1; i < ints.size(); i++) {
+                int j = i-1;
+                while (j > 0 && ints.get(j - 1) > ints.get(j)) {
+                    next = ints.get(j);
+                    ints.set(j, ints.get(j-1));
+                    j--;
                 }
-                return list;
+            ints.set(j, next);
             }
-            else{
-                if(in.nextLine() = 2){
-                    int minIndex, tmp;
-                    int n = ints.length;
-                    for (int i = 0; i < n - 1; i++) {
-                         minIndex = i;
-                         for (int j = i + 1; j < n; j++){
-                              if (ints[j] < ints[minIndex]){
-                                   minIndex = j;
-                              }
-                         }
-                         if (minIndex != i) {
-                              tmp = ints[i];
-                              ints[i] = ints[minIndex];
-                              ints[minIndex] = tmp;
-                         }
+        }
+        else{
+            int minIndex, tmp;
+            int n = ints.size();
+            for (int i = 0; i < n - 1; i++) {
+                minIndex = i;
+                for (int j = i + 1; j < n; j++){
+                    if (ints[j] < ints[minIndex]){
+                        minIndex = j;
                     }
                 }
+                if (minIndex != i) {
+                    tmp = ints[i];
+                    ints[i] = ints[minIndex];
+                    ints[minIndex] = tmp;
+                }
             }
-            for(int b = 0; b < ints.length; b++){
-                System.out.println(ints[b]);
-            }
-     }
-             
-                
-
-
-
-                
-        
-  
-       
-   
+        }
+        for(int b = 0; b < ints.size(); b++){
+            System.out.println(ints[b]);
+        }
+    }
 }
 
 
