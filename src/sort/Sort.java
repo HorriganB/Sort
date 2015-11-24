@@ -41,7 +41,48 @@ public class Sort {
             }
             System.out.println("2 = SelectSort, 1 = InsertSort");
     }
-          
+    public static void sort(){
+            if(in.nextInt() = 1){      
+                for (int i = 1; i < ints.length; i++) {
+                    int next = ints[i];        
+                    int j = i;
+                    while (j > 0 && ints[j - 1] > next) {
+                         ints[j] = ints[j - 1];
+                         j--;
+                    }
+                list[j] = next;
+                }
+                return list;
+            }
+            else{
+                if(in.nextLine() = 2){
+                    int minIndex, tmp;
+                    int n = ints.length;
+                    for (int i = 0; i < n - 1; i++) {
+                         minIndex = i;
+                         for (int j = i + 1; j < n; j++){
+                              if (ints[j] < ints[minIndex]){
+                                   minIndex = j;
+                              }
+                         }
+                         if (minIndex != i) {
+                              tmp = ints[i];
+                              ints[i] = ints[minIndex];
+                              ints[minIndex] = tmp;
+                         }
+                    }
+                }
+            }
+            for(int b = 0; b < ints.length; b++){
+                System.out.println(ints[b]);
+            }
+     }
+             
+                
+
+
+
+                
         
   
        
@@ -53,4 +94,3 @@ public class Sort {
   
 
     
-
